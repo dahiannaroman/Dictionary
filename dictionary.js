@@ -1,4 +1,4 @@
-export const dictionary = {
+const dictionary = {
   categories: {
     animals: [
       { "id": 1, "english": "Dog", "spanish": "Perro", "example": "The dog is barking." },
@@ -79,4 +79,74 @@ export const dictionary = {
       { "id": 5, "english": "Work", "spanish": "Trabajar", "example": "He works in an office." }
     ]
   }
+};
+
+// Referencia al contenedor de salida
+const outputContainer = document.getElementById("output-container");
+
+
+
+// Actualizar la función de traducción
+document.getElementById("translate-btn").addEventListener("click", () => {
+    const input = document.getElementById("word-input").value.toLowerCase();
+    const language = document.getElementById("language-select").value;
+    const categoryWords = Object.values(dictionary.categories).flat();
+    const result = categoryWords.find((word) =>
+        language === "en-es" ? word.english.toLowerCase() === input : word.spanish.toLowerCase() === input
+    );
+    outputContainer.innerHTML = result
+        ? `<p>${language === "en-es" ? `${input} -> ${result.spanish}` : `${input} -> ${result.english}`}</p>`
+        : "<p>Palabra no encontrada</p>";
+});
+
+// Actualizar función para renderizar el diccionario completo
+function renderDictionary(list) {
+   // Limpia el contenedor
+  document.getElementById("clear-btn").addEventListener("click", () => {
+    outputContainer.innerHTML = "";
+  });
+    list.forEach(({ english, spanish, example }) => {
+        const wordDiv = document.createElement("div");
+        wordDiv.innerHTML = `<strong>${english}</strong> -> ${spanish} <em>(${example})</em>`;
+        outputContainer.appendChild(wordDiv);
+    });
 }
+
+// Modificar la función de agregar palabra
+document.getElementById("add-word-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const english = document.getElementById("new-word-en").value.trim();
+  const spanish = document.getElementById("new-word-es").value.trim();
+  const example = document.getElementById("new-word-example").value.trim();
+  const category = document.getElementById("new-word-category").value;
+
+  const newWord = { id: Date.now(), english, spanish, example };
+  dictionary.categories[category].push(newWord);
+  e.target.reset();
+});
+
+
+// Ordenar palabras
+document.getElementById("sort-btn").addEventListener("click", () => {
+    const categoryWords = Object.values(dictionary.categories).flat();
+    const sortedWords = categoryWords.sort((a, b) => a.english.localeCompare(b.english));
+    renderDictionary(sortedWords);
+});
+
+// Filtrar por categoría
+document.getElementById("category-filters").addEventListener("change", (e) => {
+  const selectedCategory = e.target.value; // Categoría seleccionada
+  if (!selectedCategory) {
+    outputContainer.innerHTML = "<p>Selecciona una categoría para mostrar palabras.</p>";
+    return;
+  }
+
+  const filteredWords = dictionary.categories[selectedCategory] || [];
+  renderDictionary(filteredWords);
+});
+
+
+
+
+

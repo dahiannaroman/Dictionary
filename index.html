@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="shortcut icon" href="assets/diccionario.png" type="image/x-icon">
+    <title>Dictionary</title>
+</head>
+<body>
+<header>
+    <div class="container-header">
+        <h1>Traductor</h1>
+    </div>
+</header>
+<section id="section-dictionary"> 
+    <div class="card-words">
+        <h1>Traductor Interactivo Inglés-Español</h1>
+        <!-- Entrada de palabra -->
+
+        <div>
+            <input type="text" id="word-input" placeholder="Escribe una palabra">
+            <select id="language-select">
+                <option value="en-es">Inglés a Español</option>
+                <option value="es-en">Español a Inglés</option>
+            </select>
+            <button id="translate-btn">Traducir</button>
+            <p id="translation-result"></p>
+            <div id="output-container" class="output"></div>
+
+        </div>
+
+        <!-- Mostrar diccionario -->
+        <h2>Diccionario</h2>
+        <button id="sort-btn">Ordenar Alfabéticamente</button>
+        <button id="clear-btn">Limpiar</button>
+        <ul id="dictionary-list"></ul>
+
+        <!-- Filtrar por categoría -->
+        <h2>Filtrar por Categoría</h2>
+        <div id="category-filters">
+            <label><input type="radio" name="category" value="animals"> Animales</label>
+            <label><input type="radio" name="category" value="fruits"> Frutas</label>
+            <label><input type="radio" name="category" value="colors"> Colores</label>
+            <label><input type="radio" name="category" value="physical_descriptions"> Descripciones</label>
+            <label><input type="radio" name="category" value="skills"> Habilidades</label>
+            <label><input type="radio" name="category" value="verbs"> Verbos</label>
+        </div>
+
+        <!-- Agregar nuevas palabras -->
+        <h2>Añadir Nueva Palabra</h2>
+        <form id="add-word-form">
+            <input type="text" id="new-word-en" placeholder="Palabra en inglés" required>
+            <input type="text" id="new-word-es" placeholder="Traducción al español" required>
+            <input type="text" id="new-word-example" placeholder="Ejemplo de uso" required>
+            <select id="new-word-category">
+                <option value="animals">Animales</option>
+                <option value="fruits">Frutas</option>
+                <option value="colors">Colores</option>
+                <option value="physical_descriptions">Descripciones físicas</option>
+                <option value="skills">Habilidades</option>
+                <option value="verbs">Verbos</option>
+            </select>
+            
+            <button type="submit">Agregar</button>
+        </form>
+    </div>
+</section>
+<script src="dictionary.js"></script>
+</body>
+</html>
