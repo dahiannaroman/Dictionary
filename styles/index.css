@@ -103,7 +103,7 @@ section {
     color: #333;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
-  input, select, button {
+  input, select, button{
     margin: 5px;
     padding: 5px;
     border: 2px solid  #000000;
@@ -138,16 +138,17 @@ label {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-form {
-  background: #fff;
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* Dos columnas iguales */
-  justify-content: center;
-  align-items: center;
-  width: 100px;
+.new-word {
+  width: 35rem;
+  display: flex;
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 20px;
 }
 
-
-
+.new-word > * {
+  flex: 1 1 calc(50% - 20px); /* Cada elemento ocupa el 50% menos el espacio del gap */
+  text-align: center; /* Centrar texto dentro de los elementos, opcional */
+}
 
