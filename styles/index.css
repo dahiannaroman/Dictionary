@@ -10,12 +10,12 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: rgb(195, 160, 228);
+    background-color:#e6bdea;
 }
 
 header {
     width: 100%;
-    background-color: #cb74fd;
+    background-color: #bc6fc6;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,20 +39,20 @@ header {
 }
 
 section {
-    width: 100%;
-    height: 100%;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;  
-    flex-wrap: wrap;
-    overflow-y: scroll;
+  width: 100%;
+  padding: 1rem; 
+  display: flex;
+  justify-content: center; 
+  gap: 4rem; 
+  flex-wrap: wrap; 
+  box-sizing: border-box; 
   
-  }
+}
+
 
   .card-words {
-    width: 40rem;
-    height: 40rem;
+    width: 50rem;
+    min-height: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,20 +70,19 @@ section {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
-
   input {
-    width: 300px;
+    width: 200px;
     padding: 10px;
     font-size: 16px;
-    border: 2px solid #ccc;
+    border: 2px solid  #000000;
     border-radius: 5px;
     outline: none;
     transition: border-color 0.3s ease;
   }
   
   button {
-    background-color: #007bff; 
-    color: white; 
+    background-color:  #bc6fc6; 
+    color: rgb(0, 0, 0); 
     border: none; 
     padding: 10px 20px; 
     font-size: 16px; 
@@ -93,19 +92,22 @@ section {
   }
 
   button:hover {
-    background-color: #0056b3; 
+    background-color: #a73bce; 
   }
 
   button:active {
-    background-color: #004085; 
+    background-color:#a73bce; 
   }
 
   h1, h2 {
     color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   input, select, button {
     margin: 5px;
     padding: 5px;
+    border: 2px solid  #000000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   ul {
     list-style: none;
@@ -119,9 +121,33 @@ section {
     border: 1px solid #ddd;
     padding: 15px;
     margin-top: 20px;
-    background-color: #f9f9f9;
+    background-color:#ebd8f6;
     min-height: 100px;
     overflow-y: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-  
+input[type="radio"] {
+  accent-color:  #a73bce; 
+  width: 18px; 
+  height: 18px;
+  cursor: pointer; 
+}
+
+label {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form {
+  background: #fff;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Dos columnas iguales */
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+}
+
+
+
+
