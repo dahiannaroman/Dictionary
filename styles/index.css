@@ -71,7 +71,7 @@ section {
   }
 
   input {
-    width: 200px;
+    width: 150px;
     padding: 10px;
     font-size: 16px;
     border: 2px solid  #000000;
@@ -136,19 +136,5 @@ input[type="radio"] {
 
 label {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.new-word {
-  width: 35rem;
-  display: flex;
-  flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
-  background-color: #ffffff;
-  border-radius: 5px;
-  padding: 20px;
-}
-
-.new-word > * {
-  flex: 1 1 calc(50% - 20px); /* Cada elemento ocupa el 50% menos el espacio del gap */
-  text-align: center; /* Centrar texto dentro de los elementos, opcional */
 }
 
